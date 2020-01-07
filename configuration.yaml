@@ -1,0 +1,47 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+homeassistant:
+    latitude: !secret latitude
+    longitude: !secret longitude
+    elevation: 78
+    unit_system: metric
+    time_zone: Europe/Copenhagen
+    name: Home
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+  base_url: 192.168.4.175:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+    language: 'da'
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+frontend: !include frontend.yaml
+
+vacuum:
+  - platform: roomba
+    host: 192.168.4.44
+    username: !secret roomba_username
+    password: !secret roomba_password
+
+media_player: 
+  - platform: samsungtv
+    host: 192.168.4.97
+    name: Living Room TV
+    mac: 60:6b:bd:85:59:fc
+  - platform: lg_soundbar
+    host: 192.168.4.228
+    name: Living Room LG Soundbar
+
+remote:
+  - platform: broadlink
+    host: 192.168.4.218
+    mac: c8:f7:42:74:cd:38
+    name: RM3 Living Room
