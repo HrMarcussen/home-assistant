@@ -45,3 +45,11 @@ remote:
     host: 192.168.4.218
     mac: c8:f7:42:74:cd:38
     name: RM3 Living Room
+
+sensor:
+  - platform: discogs
+    token: !secret discogs_token
+    monitored_conditions:
+    - collection
+    - wantlist
+    - random_record
