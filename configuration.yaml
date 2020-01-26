@@ -57,7 +57,18 @@ sensor:
   - platform: wundergroundpws
     api_key: !secret wu_apikey
     pws_id: !secret wu_stationid
+    lang: da-DK
     monitored_conditions:
     - temp
     - dewpt
+    - windChill
     - heatIndex
+    - solarRadiation
+    - uv
+    - winddir
+    - windGust
+    - windSpeed
+    - humidity
+    - precipTotal
+    - precipRate
+    - pressure
