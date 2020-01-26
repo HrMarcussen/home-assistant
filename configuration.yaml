@@ -53,3 +53,12 @@ sensor:
     - collection
     - wantlist
     - random_record
+
+sensor:
+  - platform: wundergroundpws
+    api_key: !secret wu_apikey
+    pws_id: !secret wu_stationid
+    monitored_conditions:
+      - temp
+      - dewpt
+      - heatIndex
