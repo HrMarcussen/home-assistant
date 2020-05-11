@@ -26,20 +26,11 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 frontend: !include frontend.yaml
 
-vacuum:
-  - platform: roomba
-    host: 192.168.4.44
-    username: !secret roomba_username
-    password: !secret roomba_password
-
 media_player: 
   - platform: samsungtv
     host: 192.168.4.97
     name: Living Room TV
     mac: 60:6b:bd:85:59:fc
-  - platform: lg_soundbar
-    host: 192.168.4.228
-    name: Living Room LG Soundbar
 
 remote:
   - platform: broadlink
