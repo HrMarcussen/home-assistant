@@ -1,1 +1,32 @@
-[]
+- id: '1589357117945'
+  alias: New Automation
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.openclose_2
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data:
+      entity_id: media_player.kokken_alrum
+      language: en
+      message: I loves you honsy
+    service: tts.google_translate_say
+- id: '1609248888000'
+  alias: Test
+  description: ''
+  trigger:
+  - platform: time
+    at: '14:55'
+  condition: []
+  action:
+  - service: media_player.volume_set
+    data:
+      volume_level: 0.5
+    entity_id: media_player.kokken_alrum
+  - service: tts.google_cloud_say
+    data:
+      entity_id: media_player.kokken_alrum
+      message: Master Thomas. Det er snart nytår
+  mode: single

@@ -17,8 +17,15 @@ http:
 
 # Text to speech
 tts:
-  - platform: google_translate
-    language: 'da'
+  - platform: google_cloud
+    key_file: googlecloud.json
+    language: da-DK
+    #gender: male
+    voice: da-DK-Wavenet-A
+    encoding: linear16
+    speed: 0.9
+    pitch: -2.5
+    gain: -5.0
 
 group: !include groups.yaml
 automation: !include automations.yaml
@@ -32,11 +39,11 @@ media_player:
     name: Living Room TV
     mac: 60:6b:bd:85:59:fc
 
-remote:
-  - platform: broadlink
-    host: 192.168.4.218
-    mac: c8:f7:42:74:cd:38
-    name: RM3 Living Room
+#remote:
+#  - platform: broadlink
+#    host: 192.168.4.218
+#    mac: c8:f7:42:74:cd:38
+#    name: RM3 Living Room
 
 sensor:
   - platform: discogs
